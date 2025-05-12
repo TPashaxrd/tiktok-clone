@@ -1,5 +1,6 @@
 import { Home, Compass, Users, Upload, Bell, MessageCircle, Tv, User, MoreHorizontal } from 'lucide-react';
 import TiktokIcon from '../Images/tiktok-logo2.png';
+import { followingAccounts } from '../data/followingAccounts';
 
 export default function LeftSidebar() {
   return (
@@ -38,21 +39,21 @@ export default function LeftSidebar() {
           <SidebarItem icon={<MoreHorizontal size={20} />} label="Dahası" />
         </nav>
 
-        {/* Takip edilen hesaplar */}
         <div className="mt-6">
           <div className="text-sm text-gray-400 mb-2 font-semibold">Takip edilen hesaplar</div>
           <div className="space-y-1 text-sm">
-            <div className="hover:underline cursor-pointer">furkanemirce_official</div>
-            <div className="hover:underline cursor-pointer">eylul</div>
-            <div className="hover:underline cursor-pointer">bayku__s</div>
-            <div className="hover:underline cursor-pointer">yasuu.37</div>
-            <div className="hover:underline cursor-pointer">turkgelidicom</div>
+            {followingAccounts.slice(0, 5).map((data) => (
+              <>
+               <div className="hover:underline cursor-pointer" key={data.id}>
+                {data.name}
+               </div>
+              </>
+            ))}
           </div>
           <div className="mt-2 text-sm text-blue-400 hover:underline cursor-pointer">Daha fazla göster</div>
         </div>
       </div>
 
-      {/* Footer */}
       <div className="pt-6 text-xs text-gray-500 space-y-1 border-t border-neutral-800 mt-4">
         <div className="hover:underline cursor-pointer">Şirket</div>
         <div className="hover:underline cursor-pointer">Program</div>
