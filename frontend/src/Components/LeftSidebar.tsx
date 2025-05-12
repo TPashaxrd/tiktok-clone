@@ -6,7 +6,6 @@ export default function LeftSidebar() {
   return (
     <div className="fixed top-0 left-0 h-screen w-60 bg-black text-white p-4 flex flex-col space-y-4 overflow-hidden z-50">
       <div className="flex-1 overflow-y-auto flex flex-col space-y-4">
-        {/* Logo */}
         <div className="user-select-none mb-4 text-2xl font-bold flex items-center space-x-2">
           <img
             src={TiktokIcon}
@@ -18,14 +17,12 @@ export default function LeftSidebar() {
           </div>
         </div>
 
-        {/* Arama Kutusu */}
         <input
           type="text"
           placeholder="Ara"
           className="font-roboto user-select-none bg-neutral-800 text-sm px-3 py-2 rounded-full outline-none"
         />
 
-        {/* Menü */}
         <nav className="flex font-winky-sans flex-col space-y-4 mt-4">
           <SidebarItem icon={<Home size={20} />} label="Sizin İçin" />
           <SidebarItem icon={<Compass size={20} />} label="Keşfet" />
